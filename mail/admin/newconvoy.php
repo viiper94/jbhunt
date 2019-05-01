@@ -1,0 +1,2 @@
+<p>Конвой водителя [Volvo Trucks] <?= Yii::$app->user->identity->nickname ?> ожидает модерации!</p>
+<a href="<?= \yii\helpers\Url::to(['convoys/index', 'id' => $convoy_id], 'https') ?>">Смотреть конвой</a>
