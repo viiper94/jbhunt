@@ -215,9 +215,6 @@ $this->registerMetaTag([
 				<h5 class="light">Пока что нет модов в этой категории =(</h5>
 			</div>
 		<?php endif ?>
-		<p class="clearfix col s12 grey-text light">Нужна модификация для мультиплеера?
-			<a href="https://vk.com/im?sel=-105444090" target="_blank" style="text-decoration: underline;">Пиши нам!</a>
-		</p>
 		<div class="clearfix"></div>
 		<?= LinkPager::widget([
 			'pagination' => $pagination,
