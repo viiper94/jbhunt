@@ -73,7 +73,7 @@ class AchievementsForm extends Model{
 					$img->save($file->tempName);
 				}
                 $achievement->image = str_replace(['.png', '.jpg'], '', $file->name).'_'.time().'.jpg';
-                $file->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/' . $achievement->image);
+                $file->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/' . $achievement->image);
                 return $achievement->update() !== false;
             }else{
                 return true;
@@ -92,8 +92,8 @@ class AchievementsForm extends Model{
         $achievement->scores = $this->scores;
         $achievement->visible = $this->visible ? '1' : '0';
         if($file = UploadedFile::getInstance($this, 'image')){
-			if($achievement->image !== 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/'.$achievement->image)){
-				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/'.$achievement->image);
+			if($achievement->image !== 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/'.$achievement->image)){
+				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/'.$achievement->image);
 			}
 			if($file->size > 1500000){
 				$img = new Image();
@@ -104,7 +104,7 @@ class AchievementsForm extends Model{
 				$img->save($file->tempName);
 			}
 			$achievement->image = str_replace(['.png', '.jpg'], '', $file->name).'_'.time().'.jpg';
-            $file->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/' . $achievement->image);
+            $file->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/' . $achievement->image);
         }
         return $achievement->update() !== false;
     }

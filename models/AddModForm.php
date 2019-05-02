@@ -6,8 +6,8 @@ use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
-define('__FILEDIR__', $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/mods_mp/');
-define('__IMGDIR__', $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/mods/');
+define('__FILEDIR__', $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/mods_mp/');
+define('__IMGDIR__', $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/mods/');
 
 class AddModForm extends Model{
 

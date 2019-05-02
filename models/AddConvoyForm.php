@@ -153,11 +153,11 @@ class AddConvoyForm extends Model{
             if($map_full = UploadedFile::getInstance($this, 'picture_full')){
                 $convoy->picture_full = $convoy->id.'-f.'.$map_full->extension;
                 $convoy->picture_small = $convoy->id.'-f.'.$map_full->extension;
-                $map_full->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full);
+                $map_full->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full);
             }
             if($map_small = UploadedFile::getInstance($this, 'picture_small')){
                 $convoy->picture_small = $convoy->id.'-s.'.$map_small->extension;
-                $map_small->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small);
+                $map_small->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small);
             }
             if($extra_picture = UploadedFile::getInstance($this, 'extra_picture')){
 				if($extra_picture->size > 1500000){
@@ -169,7 +169,7 @@ class AddConvoyForm extends Model{
 					$img->save($extra_picture->tempName);
 				}
                 $convoy->extra_picture = time().'_'.str_replace(['.png', '.jpg'], '', $extra_picture->name).'_'.time().'.jpg';
-				$extra_picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture);
+				$extra_picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture);
             }
             if(!User::isAdmin()) Mail::newMemberConvoyToAdmin($convoy->id);
             $convoy->update();
@@ -214,11 +214,11 @@ class AddConvoyForm extends Model{
 		if($map_full = UploadedFile::getInstance($this, 'picture_full')){
 			$convoy->picture_full = $convoy->id.'-f.'.$map_full->extension;
 			$convoy->picture_small = $convoy->id.'-f.'.$map_full->extension;
-			$map_full->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full);
+			$map_full->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full);
 		}
 		if($map_small = UploadedFile::getInstance($this, 'picture_small')){
 			$convoy->picture_small = $convoy->id.'-s.'.$map_small->extension;
-			$map_small->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small);
+			$map_small->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small);
 		}
 		if($extra_picture = UploadedFile::getInstance($this, 'extra_picture')){
 			if($extra_picture->size > 1500000){
@@ -230,7 +230,7 @@ class AddConvoyForm extends Model{
 				$img->save($extra_picture->tempName);
 			}
 			$convoy->extra_picture = time().'_'.str_replace(['.png', '.jpg'], '', $extra_picture->name).'_'.time().'.jpg';
-			$extra_picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture);
+			$extra_picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture);
 		}
         return $convoy->update() !== false;
     }

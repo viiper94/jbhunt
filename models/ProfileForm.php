@@ -101,21 +101,21 @@ class ProfileForm extends Model{
 		$user->nickname = $form['nickname'];
 		if($image = UploadedFile::getInstance($this, 'picture')){
 			if($user->picture !== 'default.jpg'){
-				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/'.$user->picture);
+				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/'.$user->picture);
 			}
 			$user->picture = $user->id.'.'.$image->extension;
 			$form['picture'] = $user->picture;
 			Yii::$app->user->identity->picture = $user->picture;
-			$image->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/'.$user->picture);
+			$image->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/'.$user->picture);
 		}
 		if($image = UploadedFile::getInstance($this, 'bg_image')){
 			if($user->bg_image !== 'default.jpg'){
-				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/bg/'.$user->bg_image);
+				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/bg/'.$user->bg_image);
 			}
 			$user->bg_image = $user->id.'.'.$image->extension;
 			$form['picture'] = $user->bg_image;
 			Yii::$app->user->identity->bg_image = $user->bg_image;
-			$image->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/bg/'.$user->bg_image);
+			$image->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/bg/'.$user->bg_image);
 		}
 		$this->updateIdentity($form);
 
@@ -144,7 +144,7 @@ class ProfileForm extends Model{
 
     public static function updateImage($id, $file) {
         $user = User::findOne($id);
-        if($user->picture != 'default.jpg') unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/' . $user->picture);
+        if($user->picture != 'default.jpg') unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture);
         switch ($file['type']){
             case 'image/png': $ext = '.png'; break;
             case 'image/gif': $ext = '.gif'; break;
@@ -152,7 +152,7 @@ class ProfileForm extends Model{
         }
         $user->picture = $user->id . $ext;
         $user->update();
-        $dir = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/' . $user->picture;
+        $dir = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture;
         $path = false;
         if(move_uploaded_file($file['tmp_name'], $dir)){
             $path = str_replace($_SERVER['DOCUMENT_ROOT'], '', $dir);
@@ -162,8 +162,8 @@ class ProfileForm extends Model{
 
     public static function updateBgImage($id, $file) {
         $user = User::findOne($id);
-        if($user->bg_image != 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/bg/'.$user->bg_image)){
-        	unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/bg/'.$user->bg_image);
+        if($user->bg_image != 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/bg/'.$user->bg_image)){
+        	unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/bg/'.$user->bg_image);
 		}
         switch ($file['type']){
             case 'image/png': $ext = '.png'; break;
@@ -179,7 +179,7 @@ class ProfileForm extends Model{
 		}
         $user->bg_image = $user->id. $file['name'] . $ext;
         $user->update();
-        $dir = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/bg/' . $user->bg_image;
+        $dir = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/bg/' . $user->bg_image;
         $path = false;
         if(move_uploaded_file($file['tmp_name'], $dir)){
             $path = str_replace($_SERVER['DOCUMENT_ROOT'], '', $dir);

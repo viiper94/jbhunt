@@ -85,7 +85,7 @@ class User extends ActiveRecord implements IdentityInterface{
 				$user->last_name = explode(' ', $json->realname)[1];
 			}
 			$url = $json->avatarfull;
-			$img = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/users/'.$json->steamid.'.jpg';
+			$img = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/'.$json->steamid.'.jpg';
 			file_put_contents($img, Steam::getData($url));
 			$user->picture = $json->steamid.'.jpg';
 			$tr_id = TruckersMP::getUserID($json->steamid);

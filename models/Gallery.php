@@ -36,16 +36,16 @@ class Gallery extends ActiveRecord{
 		$photo = new Gallery();
 		$photo->image_original = time().'_'.$image['name'];
 		$photo->image = $photo->image_original;
-		if(move_uploaded_file($image['tmp_name'], $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/' . $photo->image)){
+		if(move_uploaded_file($image['tmp_name'], $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/' . $photo->image)){
 			if($image['size'] > 1500000){
 				$photo->image = 's-'.$photo->image;
 				$img = new Image();
-				$img->load($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/' . $photo->image_original);
+				$img->load($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/' . $photo->image_original);
 				$photo->dimensions = $img->getWidth() .'x'. $img->getHeight();
 				if($img->getWidth() > 1920){
 					$img->resizeToWidth(1920);
 				}
-				$img->save($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/' . $photo->image);
+				$img->save($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/' . $photo->image);
 			}
 			$photo->description = nl2br($description);
 			$photo->size = $image['size'];
@@ -62,11 +62,11 @@ class Gallery extends ActiveRecord{
 
 	public static function removePhoto($id){
 		$photo = Gallery::findOne($id);
-		if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/'.$photo->image)){
-			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/'.$photo->image);
+		if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/'.$photo->image)){
+			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/'.$photo->image);
 		}
-		if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/'.$photo->image_original)){
-			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/gallery/'.$photo->image_original);
+		if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/'.$photo->image_original)){
+			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/gallery/'.$photo->image_original);
 		}
 		return $photo->delete();
     }

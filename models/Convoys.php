@@ -70,14 +70,14 @@ class Convoys extends ActiveRecord{
 
     public static function deleteConvoy($id){
         $convoy = Convoys::findOne($id);
-        if($convoy->picture_full && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full)) {
-            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full);
+        if($convoy->picture_full && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full)) {
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full);
         }
-        if($convoy->picture_small && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small)) {
-            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small);
+        if($convoy->picture_small && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small)) {
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small);
         }
-        if($convoy->extra_picture && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture)) {
-            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture);
+        if($convoy->extra_picture && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture)) {
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture);
         }
         return $convoy->delete();
     }
@@ -90,8 +90,8 @@ class Convoys extends ActiveRecord{
 
     public static function deleteExtraPicture($id) {
         $convoy = Convoys::findOne($id);
-		if(file_exists(Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture)) {
-			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->extra_picture);
+		if(file_exists(Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture)) {
+			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->extra_picture);
 		}
         $convoy->extra_picture = null;
         $convoy->save();
@@ -99,11 +99,11 @@ class Convoys extends ActiveRecord{
 
     public static function deleteMap($id) {
         $convoy = Convoys::findOne($id);
-		if($convoy->picture_full && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full)) {
-			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_full);
+		if($convoy->picture_full && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full)) {
+			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_full);
 		}
-		if($convoy->picture_small && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small)) {
-			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/convoys/'.$convoy->picture_small);
+		if($convoy->picture_small && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small)) {
+			unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/convoys/'.$convoy->picture_small);
 		}
         $convoy->picture_full = null;
         $convoy->picture_small = null;

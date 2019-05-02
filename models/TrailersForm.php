@@ -55,7 +55,7 @@ class TrailersForm extends Model{
 					$img->save($picture->tempName);
 				}
 				$trailer->picture = str_replace(['.png', '.jpg'], '', $picture->name).'_'.time().'.jpg';
-                $picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/trailers/'.$trailer->picture);
+                $picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/trailers/'.$trailer->picture);
                 return $trailer->update() != false;
             }else{
                 return true;
@@ -72,8 +72,8 @@ class TrailersForm extends Model{
         $trailer->category = $this->category;
         $trailer->weight = $this->weight;
         if($picture = UploadedFile::getInstance($this, 'picture')){
-			if($trailer->picture !== 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/trailers/'.$trailer->picture)){
-				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/trailers/'.$trailer->picture);
+			if($trailer->picture !== 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/trailers/'.$trailer->picture)){
+				unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/trailers/'.$trailer->picture);
 			}
         	if($picture->size > 1500000){
 				$img = new Image();
@@ -84,7 +84,7 @@ class TrailersForm extends Model{
 				$img->save($picture->tempName);
 			}
             $trailer->picture = str_replace(['.png', '.jpg'], '', $picture->name).'_'.time().'.jpg';
-            $picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/trailers/'.$trailer->picture);
+            $picture->saveAs($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/trailers/'.$trailer->picture);
         }
         return $trailer->update() !== false;
     }

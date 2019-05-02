@@ -53,7 +53,7 @@ class AchievementsProgress extends ActiveRecord{
 				}
 				$img->save($file['tmp_name']);
 			}
-			if(move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/progress/' . $ach->proof)){
+			if(move_uploaded_file($file['tmp_name'], $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/progress/' . $ach->proof)){
 				return $ach->save();
 			}
 		}
@@ -99,8 +99,8 @@ class AchievementsProgress extends ActiveRecord{
     public static function denyAchievement($id){
         $ach = AchievementsProgress::findOne($id);
 		Notifications::addNotification('Ваш скриншот для достижения не прошел модерацию!', $ach->uid);
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/progress/'.$ach->proof)){
-            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/progress/'.$ach->proof);
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/progress/'.$ach->proof)){
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/progress/'.$ach->proof);
         }
         return $ach->delete() !== false;
     }

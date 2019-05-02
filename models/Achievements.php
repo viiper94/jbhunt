@@ -26,8 +26,8 @@ class Achievements extends ActiveRecord{
 			$related_ach->related = $ach->related;
 			$related_ach->update();
 		}
-        if($ach->image && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/'.$ach->image)){
-            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/web/images/achievements/'.$ach->image);
+        if($ach->image && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/'.$ach->image)){
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/achievements/'.$ach->image);
         }
         return $ach->delete();
     }
