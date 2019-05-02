@@ -40,7 +40,7 @@ $this->title = 'Зарегистрированые пользователи са
 	</div>
     <?php foreach($users as $user): ?>
         <div class="card horizontal grey lighten-4 user hoverable">
-            <div class="card-image no-img_horizontal" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/web/images/users/<?= $user->picture ?>)">
+            <div class="card-image no-img_horizontal" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/users/<?= $user->picture ?>)">
                 <a href="<?= Url::to(['site/profile', 'id' => $user->id]) ?>"
 				   class="waves-effect waves-light <?php if(\app\models\User::isOnline($user)) : ?>online<?php endif ?>">
                 </a>
