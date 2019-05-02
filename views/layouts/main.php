@@ -39,10 +39,6 @@ AppAsset::register($this); ?>
 
 			<div class="clearfix"></div>
 
-        <?php if(\app\models\User::isVtcMember() && !\app\models\VtcMembers::isCompleteStep4()){
-            require_once 'member_modal.php';
-        } ?>
-
     </main>
 
     <?php require_once 'footer.php' ?>

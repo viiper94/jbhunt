@@ -1,6 +1,4 @@
-$(document).on('ready', function(){
-
-    console.log('fdsfsdfsd');
+$(document).ready(function(){
 
     $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300
@@ -11,7 +9,6 @@ $(document).on('ready', function(){
     $('select').material_select();
     $('.parallax').parallax();
     $('.modal').modal();
-    // $('#step4').modal('open');
     $.extend($.fn.pickadate.defaults, {
         clear: 'Очистить',
         close: 'Закрыть',
