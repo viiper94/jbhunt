@@ -32,7 +32,7 @@ use app\models\User; ?>
 							['members/edit', 'id' => $claim->v_member_id] :
 							['site/profile', 'id' => $claim->user_id]
 					) ?>">
-						[Volvo Trucks] <?= htmlentities($claim->nickname) ?>
+						[J.B. Hunt] <?= htmlentities($claim->nickname) ?>
 					</a>
                     <div class="flex claim-info">
                         <div style="max-width: 70%">

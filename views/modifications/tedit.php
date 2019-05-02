@@ -2,16 +2,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'TEDIT для ETS2 и ATS - Volvo Trucks';
-$this->registerMetaTag([
-	'name' => 'description',
-	'content' => 'Tedit для Euro Truck Simulator 2 Multiplayer и American Truck Simulator Multiplayer. Tedit для TruckersMP.'
-]);
-$this->registerMetaTag([
-	'name' => 'keywords',
-	'content' => 'tedit, ets2, ats, truckersmp, tedit для ets2mp, tedit для atsmp, как найти прицеп на конвой, как взять груз на конвой'
-]);
-?>
+$this->title = 'TEDIT для ETS2 и ATS - J.B. Hunt'; ?>
 
 <div class="parallax-container parallax-shadow hide-on-small-only" style="height: 400px;">
     <div class="container">

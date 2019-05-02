@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Статистика Volvo Trucks';
+$this->title = 'Статистика J.B. Hunt';
 
 ?>
     <div class="members-stat" style="overflow-x: scroll">
@@ -52,7 +52,7 @@ $this->title = 'Статистика Volvo Trucks';
                                 <a href="<?= \app\models\User::isAdmin() ?
 									Url::to(['members/edit', 'id' => $member->id]) :
 									Url::to(['site/profile', 'id' => $member->user_id]) ?>" class="black-text">
-									[Volvo Trucks] <?= $member->nickname ?>
+									[J.B. Hunt] <?= $member->nickname ?>
 								</a>
                                 <?php if($member->vacation != '' || $member->vacation_undefined == '1') : ?>
                                     <span class="member-vacation grey-text" style="display: block;">

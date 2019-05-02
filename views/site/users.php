@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-$this->title = 'Зарегистрированые пользователи сайта - Volvo Trucks'; ?>
+$this->title = 'Зарегистрированые пользователи сайта - J.B. Hunt'; ?>
 
 <div class="container">
     <div class="card-panel grey lighten-4 search">

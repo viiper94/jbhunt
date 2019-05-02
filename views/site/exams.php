@@ -1,6 +1,6 @@
 <?php
 
-$this->title = 'Экзамены для водителей Volvo Trucks';
+$this->title = 'Экзамены для водителей J.B. Hunt';
 
 ?>
 

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Жалоба на сотрудника - Volvo Trucks';
+$this->title = 'Жалоба на сотрудника - J.B. Hunt';
 
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/select2.min.js?t='.time(),  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2.min.css?t='.time());

@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Конвои Volvo Trucks';
+$this->title = 'Конвои J.B. Hunt';
 ?>
 
 <div class="container">
@@ -108,7 +108,7 @@ $this->title = 'Конвои Volvo Trucks';
         </div>
     <?php endif; ?>
     <?php if((count($convoys) > 0 && \app\models\User::isAdmin()) || (count($convoys) > 1 && !\app\models\User::isAdmin())) : ?>
-        <h5 class="light" style="margin-top: 50px;">Все <?php if(!\app\models\User::isVtcMember()) : ?> открытые<?php endif ?> конвои Volvo Trucks</h5>
+        <h5 class="light" style="margin-top: 50px;">Все <?php if(!\app\models\User::isVtcMember()) : ?> открытые<?php endif ?> конвои J.B. Hunt</h5>
         <div class="row">
             <?php foreach($convoys as $convoy) : ?>
                 <div class="col l6 s12">

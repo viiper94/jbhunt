@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-$this->title = 'Модерация достижений - Volvo Trucks'; ?>
+$this->title = 'Модерация достижений - J.B. Hunt'; ?>
 
 <div class="container">
     <h4 class="light">Модерация достижений</h4>

@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 
 $this->title = Yii::$app->controller->action->id == 'add' ? 'Добавить конвой' : 'Редактировать конвой' ;
 $this->title .= $model->game == 'ets' ? ' по ETS2' : ' по ATS';
-$this->title .= ' - Volvo Trucks';
+$this->title .= ' - J.B. Hunt';
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/admin.js?t='.time(),  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/cities.js?t='.time(),  ['position' => yii\web\View::POS_END]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/select2.min.js',  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);

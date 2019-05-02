@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-$this->title = 'Жалобы на сотрудников - Volvo Trucks'; ?>
+$this->title = 'Жалобы на сотрудников - J.B. Hunt'; ?>
 
 <div class="container">
     <?php if(count($appeals) > 0) : ?>
@@ -31,7 +31,7 @@ $this->title = 'Жалобы на сотрудников - Volvo Trucks'; ?>
                         <h5 class="light">Жалоба на
                             <?php if(\app\models\User::isVtcMember($appeal->appeal_to_user_id)) : ?>
                                 <a href="<?= Url::to(['members/edit', 'id' => $appeal->appeal_to_id]) ?>" class="black-text">
-                                    <?= '[Volvo Trucks] ' ?><?= $appeal->appealed_user_nickname ?>
+                                    <?= '[J.B. Hunt] ' ?><?= $appeal->appealed_user_nickname ?>
                                 </a>
                             <?php else: ?>
                                 <a href="<?= Url::to(['site/profile', 'id' => $appeal->appeal_to_user_id]) ?>" class="black-text">

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Зарегистрироваться - Volvo Trucks';
+$this->title = 'Зарегистрироваться - J.B. Hunt';
 $this->registerJsFile('https://www.google.com/recaptcha/api.js', ['position' => yii\web\View::POS_HEAD])
 ?>
 <div class="container login-container">

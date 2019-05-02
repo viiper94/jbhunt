@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Вариации тягачей - Volvo Trucks';
+$this->title = 'Вариации тягачей - J.B. Hunt';
 
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/fotorama.css');
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/fotorama.js',
@@ -381,7 +381,7 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/fotorama.js',
         </div>
     </div>
     <div id="trailer" class="scrollspy">
-        <h5>Фирменные полуприцепы Volvo Trucks</h5>
+        <h5>Фирменные полуприцепы J.B. Hunt</h5>
         <div class="card grey lighten-4">
             <div class="card-image">
                 <img src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/trailer.jpg">

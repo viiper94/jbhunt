@@ -32,9 +32,9 @@ use app\models\User; ?>
 							['members/edit', 'id' => $claim->member_id] :
 							['site/profile', 'id' => $claim->user_id]
 					) ?>">
-                        <span class="old-nickname">[Volvo Trucks] <?= htmlentities($claim->old_nickname) ?></span>
+                        <span class="old-nickname">[J.B. Hunt] <?= htmlentities($claim->old_nickname) ?></span>
                         &rArr;
-                        <span class="new-nickname">[Volvo Trucks] <?= htmlentities($claim->new_nickname) ?></span>
+                        <span class="new-nickname">[J.B. Hunt] <?= htmlentities($claim->new_nickname) ?></span>
                     </a>
                     <div class="flex claim-info">
                         <div style="max-width: 70%">

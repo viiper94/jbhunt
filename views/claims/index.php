@@ -1,12 +1,12 @@
 <?php
 
 
-$this->title = 'Заявления Volvo Trucks';
+$this->title = 'Заявления J.B. Hunt';
 ?>
 
 <div class="parallax-container parallax-shadow" style="height: 400px;">
     <div class="container">
-        <h4 class="parallax-title light white-text text-shadow">Заявления Volvo Trucks</h4>
+        <h4 class="parallax-title light white-text text-shadow">Заявления J.B. Hunt</h4>
     </div>
     <div class="parallax"><img src="<?=Yii::$app->request->baseUrl?>/assets/img/claims.jpg"></div>
 </div>

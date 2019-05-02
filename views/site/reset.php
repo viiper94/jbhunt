@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Сброс пароля - Volvo Trucks'; ?>
+$this->title = 'Сброс пароля - J.B. Hunt'; ?>
 
 <div class="container">
     <div class="card grey lighten-4">

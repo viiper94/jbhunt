@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Профиль - Volvo Trucks';
+$this->title = 'Профиль - J.B. Hunt';
 ?>
 
 <div class="container">

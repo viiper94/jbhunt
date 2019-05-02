@@ -1,6 +1,6 @@
 <?php
 
-$this->title = 'Жалоба добавлена - Volvo Trucks';
+$this->title = 'Жалоба добавлена - J.B. Hunt';
 ?>
 
 <div class="container">

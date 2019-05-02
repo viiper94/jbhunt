@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 if(!$model->game) $model->game = Yii::$app->request->get('game');
 $this->title = Yii::$app->controller->action->id == 'add' ? 'Добавить конвой' : 'Редактирование конвоя' ;
 $this->title .= $model->game == 'ets' ? ' по ETS2' : ' по ATS';
-$this->title .= ' - Volvo Trucks';
+$this->title .= ' - J.B. Hunt';
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/cities.js?t='.time(),  ['position' => yii\web\View::POS_END]);
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/select2.min.js',  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2.min.css');

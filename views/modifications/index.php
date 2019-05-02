@@ -3,15 +3,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-$this->title = 'Моды для ETS2MP и ATSMP, Модификации для мультиплеера - ВТК Volvo Trucks';
-$this->registerMetaTag([
-	'name' => 'description',
-	'content' => 'Моды для Euro Truck Simulator 2 Multiplayer и American Truck Simulator Multiplayer. Моды для TruckersMP.'
-]);
-$this->registerMetaTag([
-	'name' => 'keywords',
-	'content' => 'моды для мп, ets2, ats, truckersmp, моды для ets2mp, моды для atsmp, как найти прицеп на конвой, как взять груз на конвой'
-]); ?>
+$this->title = 'Моды для ETS2MP и ATSMP - ВТК J.B. Hunt'; ?>
 
 <div class="parallax-container parallax-shadow hide-on-small-only" style="height: 400px;">
 	<div class="row">
@@ -107,7 +99,7 @@ $this->registerMetaTag([
 			</li>
 		</ul>
 
-		<a class="btn-large green tooltipped waves-effect waves-light fs17" href="https://generator.volvovtc.com/" target="_blank" style="width: 100%;"
+		<a class="btn-large green tooltipped waves-effect waves-light fs17" href="https://mods-generator.com/" target="_blank" style="width: 100%;"
 		   data-tooltip="Сгенерировать мод на прицеп" data-position="bottom">
 			<i class="material-icons notranslate left">build</i>Генератор модификаций
 		</a>

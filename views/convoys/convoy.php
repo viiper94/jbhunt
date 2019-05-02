@@ -5,7 +5,7 @@ use app\models\Convoys;
 	use yii\helpers\Url;
 
 
-$this->title = $convoy->title . ' - Volvo Trucks';
+$this->title = $convoy->title . ' - J.B. Hunt';
 $card_color = $convoy->visible == '1' ? 'grey lighten-4' : 'yellow lighten-5';
 ?>
 
@@ -146,7 +146,7 @@ $card_color = $convoy->visible == '1' ? 'grey lighten-4' : 'yellow lighten-5';
         <ul class="collapsible" data-collapsible="accordion">
             <li>
                 <div class="collapsible-header grey lighten-4">
-                    <i class="material-icons notranslate">add_circle</i>Дополнительная информация для сотрудников ВТК Volvo Trucks
+                    <i class="material-icons notranslate">add_circle</i>Дополнительная информация для сотрудников ВТК J.B. Hunt
                 </div>
                 <div class="collapsible-body grey lighten-4">
 	<?php else : ?>
@@ -176,7 +176,7 @@ $card_color = $convoy->visible == '1' ? 'grey lighten-4' : 'yellow lighten-5';
 											$link = Mods::getModsPath($convoy->game).$convoy->tr_mod_file_name;
 											$text = 'Скачать модификацию';
 										}else{
-											$link = 'https://generator.volvovtc.com/';
+											$link = 'https://mods-generator.com/';
 											$text = 'Сгенерировать модификацию';
 										} ?>
 										- <a href="<?= $link ?>" target="_blank"><?= $text ?></a>

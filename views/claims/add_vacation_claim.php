@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Подать заявление на отпуск - Volvo Trucks';
+$this->title = 'Подать заявление на отпуск - J.B. Hunt';
 ?>
 
 <div class="container">

@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/select2.min.js?t='.time(),  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2.min.css?t='.time());
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2-custom.css?t='.time());
-$this->title = 'Редактировать заявление на вступление - Volvo Trucks';
+$this->title = 'Редактировать заявление на вступление - J.B. Hunt';
 ?>
 
 <div class="container">
@@ -94,7 +94,7 @@ $this->title = 'Редактировать заявление на вступл�
 					return $return;
 				},
 					'tag' => false
-				])->label('Как вы узнали про ВТК Volvo Trucks?') ?>
+				])->label('Как вы узнали про ВТК J.B. Hunt?') ?>
 
 				<?= $form->field($model, 'dlc', [
 					'template' => '<div class="col l9 s11" style="margin-bottom: 20px">{label}{input}</div>',
@@ -185,7 +185,7 @@ $this->title = 'Редактировать заявление на вступл�
 				</script>
             <?php }else{ ?>
 				<div class="col m6 s12">
-					<p>Как узнали про ВТК Volvo Trucks: <b><?= $model->claim->hear_from ? $model->claim->hear_from : '&mdash;' ?></b></p>
+					<p>Как узнали про ВТК J.B. Hunt: <b><?= $model->claim->hear_from ? $model->claim->hear_from : '&mdash;' ?></b></p>
 					<?= $form->field($model, 'hear_from')->hiddenInput()->label(false) ?>
 					<p>Кто пригласил:
 						<b>

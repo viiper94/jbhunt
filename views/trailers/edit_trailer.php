@@ -5,7 +5,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 $action = Yii::$app->controller->action->id == 'edit' ? 'Редактировать' : 'Добавить';
-$this->title = $action . ' прицеп - Volvo Trucks';
+$this->title = $action . ' прицеп - J.B. Hunt';
 
 ?>
 

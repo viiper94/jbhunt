@@ -20,7 +20,7 @@
                     <p><i class="material-icons notranslate left">error</i>ПРАВИЛА</p>
                     <ul>
                         <li><a href="<?= Url::to(['site/rules']) ?>">Правила компании</a></li>
-                        <li><a href="https://forum.truckersmp.com/index.php?/topic/5807-in-game-rules-rus-игровые-правила-08-06-2017/" target="_blank">Правила TruckersMP</a></li>
+                        <li><a href="https://forum.truckersmp.com/index.php?/topic/77442-truckersmp-rules-russian-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-truckersmp-13-04-2019/" target="_blank">Правила TruckersMP</a></li>
                     </ul>
                     <p><i class="material-icons notranslate left">settings</i>МОДИФИКАЦИИ</p>
                     <ul>
@@ -45,10 +45,10 @@
                 <div class="footer-top">
                     <h6 class="black-text">МЫ В СОЦИАЛЬНЫХ СЕТЯХ</h6>
                     <ul class="socials links">
-                        <li class="vk"><a class="waves-effect circle" target="_blank" href="https://vk.com/volvo_trucks_russia"></a></li>
-                        <li class="steam"><a class="waves-effect circle" target="_blank" href="http://steamcommunity.com/groups/volvo_trucks"></a></li>
-                        <li class="instagram"><a class="waves-effect circle" target="_blank" href="https://instagram.com/volvo_trucks_russia"></a></li>
-                        <li class="youtube"><a class="waves-effect circle" target="_blank" href="https://www.youtube.com/channel/UCCUkLXBObH0IA54XhCaDTzg"></a></li>
+                        <li class="vk"><a class="waves-effect circle" target="_blank" href="#"></a></li>
+                        <li class="steam"><a class="waves-effect circle" target="_blank" href="#"></a></li>
+                        <li class="instagram"><a class="waves-effect circle" target="_blank" href="#"></a></li>
+                        <li class="youtube"><a class="waves-effect circle" target="_blank" href="#"></a></li>
                     </ul>
                 </div>
                 <div class="footer-bottom">
@@ -64,6 +64,6 @@
         </div>
     </div>
     <div class="footer-copyright grey lighten-2 black-text">
-        <div class="container"><span>&copy; ВТК "VOLVO TRUCKS" - <?=date('Y')?></span></div>
+        <div class="container"><span>&copy; <a href="https://steamcommunity.com/id/viiper94/" target="_blank">Mayday</a> - <?=date('Y')?></span></div>
     </div>
 </footer>

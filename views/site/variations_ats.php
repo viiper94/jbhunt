@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 
-$this->title = 'Вариации тягачей - Volvo Trucks';
+$this->title = 'Вариации тягачей - J.B. Hunt';
 
 ?>
 

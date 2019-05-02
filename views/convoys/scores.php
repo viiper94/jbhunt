@@ -57,7 +57,7 @@ $this->title = 'Выставить баллы за конвой';
                                 <tr>
                                     <td>
                                         <a href="<?= Url::to(['members/edit', 'id' => $member->id]) ?>" class="black-text">
-                                            [Volvo Trucks] <?= $member->nickname ?>
+                                            [J.B. Hunt] <?= $member->nickname ?>
                                         </a>
                                     </td>
                                     <td class="center">

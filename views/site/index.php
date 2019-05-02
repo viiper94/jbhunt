@@ -2,19 +2,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'ВТК Volvo Trucks - TruckersMP';
-$this->registerMetaTag([
-    'name' => 'description',
-    'content' => 'ВТК Volvo Trucks - это динамичная, прогрессивная виртуальная транспортная компания - 
-    сообщество профессиональных водителей Euro Truck Simulator 2 и American Truck Simulator. 
-    Вы увидите не только массу различных мероприятий, 
-    но и сможете найти компаньонов для веселых поездок по дорогам Европы или США.'
-]);
-$this->registerMetaTag([
-    'name' => 'keywords',
-    'content' => 'втк, виртуальная транспортная компания, ets2, ats, truckersmp, моды для ets2mp, моды для atsmp'
-]);
-?>
+$this->title = 'J.B. Hunt'; ?>
 
 <div id="index-banner" class="parallax-container valign-wrapper">
     <div class="section" style="flex: 1;">
@@ -69,7 +57,7 @@ $this->registerMetaTag([
                     <h5>Узнаваемость</h5>
                     <p class="light fs17">Наша Компания отличается высокой дисциплиной,
                         качеством перевозок и взаимовыручкой между водителями.
-                        Каждый сотрудник Volvo Trucks выделяется на дороге,
+                        Каждый сотрудник J.B. Hunt выделяется на дороге,
                         благодаря строгому фирменному стилю тягача и безупречной манере вождения.</p>
                     <a href="<?= Url::to(['gallery/index']) ?>" class="btn indigo darken-3 waves-effect waves-light">Галерея</a>
                 </div>

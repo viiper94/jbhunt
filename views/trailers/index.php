@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use app\models\User;;
 use yii\widgets\LinkPager;
 
-$this->title = 'Трейлеры - Volvo Trucks';
+$this->title = 'Трейлеры - J.B. Hunt';
 Url::remember();
 ?>
 

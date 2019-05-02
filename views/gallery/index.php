@@ -6,7 +6,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/lightGallery/css/lig
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/lightGallery/js/lightgallery-all.min.js',
 	['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 
-$this->title = 'Галерея Volvo Trucks';
+$this->title = 'Галерея';
 ?>
 
 <div class="row" id="lightgallery">

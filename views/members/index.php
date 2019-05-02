@@ -2,11 +2,11 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Сотрудники Volvo Trucks'; ?>
+$this->title = 'Сотрудники J.B. Hunt'; ?>
 
 <div class="parallax-container parallax-shadow" style="height: 400px;">
     <div class="container">
-        <h4 class="parallax-title light white-text text-shadow">Сотрудники Volvo Trucks</h4>
+        <h4 class="parallax-title light white-text text-shadow">Сотрудники J.B. Hunt</h4>
     </div>
     <div class="parallax"><img src="<?=Yii::$app->request->baseUrl?>/assets/img/members.jpg"></div>
 </div>
@@ -23,7 +23,7 @@ $this->title = 'Сотрудники Volvo Trucks'; ?>
                     <div class="card-title">
                         <?= $member->first_name . ' ' . $member->last_name ?>
                     </div>
-                    <p class="grey-text">[Volvo Trucks] <?= $member->nickname ?></p>
+                    <p class="grey-text">[J.B. Hunt] <?= $member->nickname ?></p>
                     <p>Дата рождения:
                         <span class="nowrap"><b><?= Yii::$app->formatter->asDate($member->birth_date, 'long') ?></b></span>
                         <span class="nowrap">(<?= \app\models\User::getUserAge($member->birth_date) ?>)</span>

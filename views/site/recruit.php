@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/select2.min.js?t='.time(),  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2.min.css?t='.time());
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/css/select2-custom.css?t='.time());
-$this->title = 'Вступить в Volvo Trucks'; ?>
+$this->title = 'Вступить в J.B. Hunt'; ?>
 
 <div class="container">
 
@@ -134,7 +134,7 @@ $this->title = 'Вступить в Volvo Trucks'; ?>
 						return $return;
 					},
 						'tag' => false
-					])->label('Как вы узнали про ВТК Volvo Trucks?') ?>
+					])->label('Как вы узнали про ВТК J.B. Hunt?') ?>
 
 				<?= $form->field($model, 'dlc', [
 					'template' => '<div class="col l9 s11" style="margin-bottom: 20px">{label}{input}</div>',

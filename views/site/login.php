@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Войти на сайт - Volvo Trucks';
+$this->title = 'Войти на сайт - J.B. Hunt';
 ?>
 <div class="parallax-container parallax-shadow" style="height: 400px;">
 	<div class="container">

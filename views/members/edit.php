@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'Редактирование информации о водителе - Volvo Trucks'; ?>
+$this->title = 'Редактирование информации о водителе - J.B. Hunt'; ?>
 
 <div class="container">
     <div class="row">
@@ -17,7 +17,7 @@ $this->title = 'Редактирование информации о водит�
         ]]);?>
         <div class="col l6 s12">
             <div class="card-panel grey lighten-4">
-                <h5 class="light">[Volvo Trucks] <?= $model->nickname ?></h5>
+                <h5 class="light">[J.B. Hunt] <?= $model->nickname ?></h5>
                 <label>Должность</label>
                 <?= $form->field($model, 'post_id')->dropdownList($positions)->error(false)->label(false) ?>
                 <div class="col s11">
@@ -31,7 +31,7 @@ $this->title = 'Редактирование информации о водит�
 				<?php if($model->member->invited_by) : ?>
 					<p>Пригласил:
 						<a href="<?= Url::to(['members/edit', 'id' => $model->member->invited_by]) ?>" style="color: inherit;">
-							[Volvo Trucks] <?= $model->member->i_nickname ?>
+							[J.B. Hunt] <?= $model->member->i_nickname ?>
 						</a>
 					</p>
 				<?php endif ?>
@@ -227,7 +227,7 @@ $this->title = 'Редактирование информации о водит�
                                     <td class="grey-text center">
                                         <?php if(isset($item['admin'])){
                                             $admin = \app\models\User::findOne($item['admin']); ?>
-                                            [Volvo Trucks] <?= $admin->nickname ?>
+                                            [J.B. Hunt] <?= $admin->nickname ?>
                                         <?php } else { ?>
                                             &mdash;
                                         <?php } ?>
