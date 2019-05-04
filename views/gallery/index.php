@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 
 $this->registerCssFile(Yii::$app->request->baseUrl.'/assets/lightGallery/css/lightgallery.min.css');
-$this->registerJsFile(Yii::$app->request->baseUrl.'/assets/lightGallery/js/lightgallery-all.min.js',
+$this->registerJsFile(Yii::$app->request->baseUrl.'/assets/lightGallery/js/lightgallery-all.min.js?0405',
 	['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
 
 $this->title = 'Галерея';

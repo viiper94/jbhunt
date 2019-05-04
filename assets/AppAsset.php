@@ -29,7 +29,7 @@ class AppAsset extends AssetBundle
         '/assets/js/jquery.iframe-transport.js',
         '/assets/js/jquery.fileupload.js',
         'assets/materialize/js/materialize.js',
-        'assets/js/script.js',
+        'assets/js/script.js?0405',
     ];
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $depends = [
