@@ -28,7 +28,7 @@ $this->title = 'Редактировать заявление на вступл�
             <div class="link-image">
                 <a href="<?= Url::to(['site/profile', 'id' => $model->claim->user_id]) ?>"
 				   class="circle z-depth-3 waves-effect waves-light <?php if(\app\models\User::isOnline($model->claim)) : ?>online<?php endif ?>"
-				   style="background-image: url(<?= Yii::$app->request->baseUrl ?>/web/images/users/<?= $model->claim->picture ?>)">
+				   style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/users/<?= $model->claim->picture ?>)">
                 </a>
             </div>
             <div class="user-info row">
