@@ -4,9 +4,9 @@
     <nav class="white">
         <div class="nav-wrapper">
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons notranslate">menu</i></a>
-            <a href="<?= Yii::$app->request->baseUrl?>/" class="brand-logo" style="position: relative;">
-                <img src="<?=Yii::$app->request->baseUrl?>/assets/img/volvo-sign.png" alt="J.B. Hunt">
-            </a>
+<!--            <a href="--><?//= Yii::$app->request->baseUrl?><!--/" class="brand-logo" style="position: relative;">-->
+<!--                <img src="--><?//=Yii::$app->request->baseUrl?><!--/assets/img/volvo-sign.png" alt="J.B. Hunt">-->
+<!--            </a>-->
             <ul id="nav-mobile" class="hide-on-med-and-down right">
                 <li<?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id === 'index'){?> class="active"<?php } ?>>
                     <a href="<?=Yii::$app->request->baseUrl?>/">О НАС</a>
