@@ -1,16 +1,16 @@
-/*! lightgallery - v1.6.7 - 2018-02-11
+/*! lightgallery - v1.6.12 - 2019-02-19
 * http://sachinchoolur.github.io/lightGallery/
-* Copyright (c) 2018 Sachin N; Licensed GPLv3 */
-/*! lightgallery - v1.6.7 - 2018-02-11
+* Copyright (c) 2019 Sachin N; Licensed GPLv3 */
+/*! lightgallery - v1.6.12 - 2019-02-19
 * http://sachinchoolur.github.io/lightGallery/
-* Copyright (c) 2018 Sachin N; Licensed GPLv3 */
+* Copyright (c) 2019 Sachin N; Licensed GPLv3 */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
     define(['jquery'], function (a0) {
       return (factory(a0));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
@@ -447,7 +447,7 @@
             }
         }
 
-        var youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i);
+        var youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com|be-nocookie\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i);
         var vimeo = src.match(/\/\/(?:www\.)?vimeo.com\/([0-9a-z\-_]+)/i);
         var dailymotion = src.match(/\/\/(?:www\.)?dai.ly\/([0-9a-z\-_]+)/i);
         var vk = src.match(/\/\/(?:www\.)?(?:vk\.com|vkontakte\.ru)\/(?:video_ext\.php\?)(.*)/i);
@@ -1154,8 +1154,8 @@
         var isDraging = false;
         var isMoved = false;
         if (_this.s.enableDrag && _this.doCss()) {
-            _this.$outer.on('mousedown.lg', function(e) {
-                if (!_this.$outer.hasClass('lg-zoomed') && !_this.lgBusy && !$(e.target).text()) {
+            _this.$slide.on('mousedown.lg', function(e) {
+                if (!_this.$outer.hasClass('lg-zoomed') && !_this.lgBusy && !$(e.target).text().trim()) {
                     e.preventDefault();
                     _this.manageSwipeClass();
                     startCoords = e.pageX;
@@ -1570,9 +1570,9 @@
 
 }));
 
-/*! lg-fullscreen - v1.0.1 - 2016-09-30
+/*! lg-fullscreen - v1.1.0 - 2019-02-19
 * http://sachinchoolur.github.io/lightGallery
-* Copyright (c) 2016 Sachin N; Licensed GPLv3 */
+* Copyright (c) 2019 Sachin N; Licensed GPLv3 */
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -1580,13 +1580,13 @@
     define(['jquery'], function (a0) {
       return (factory(a0));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
     module.exports = factory(require('jquery'));
   } else {
-    factory(jQuery);
+    factory(root["jQuery"]);
   }
 }(this, function ($) {
 
@@ -1597,6 +1597,15 @@
     var defaults = {
         fullScreen: true
     };
+
+    function isFullScreen() {
+        return (
+            document.fullscreenElement ||
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement ||
+            document.msFullscreenElement
+        );
+    }
 
     var Fullscreen = function(element) {
 
@@ -1663,11 +1672,10 @@
         });
 
         this.core.$outer.find('.lg-fullscreen').on('click.lg', function() {
-            if (!document.fullscreenElement &&
-                !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-                _this.requestFullscreen();
-            } else {
+            if (isFullScreen()) {
                 _this.exitFullscreen();
+            } else {
+                _this.requestFullscreen();
             }
         });
 
@@ -1676,7 +1684,9 @@
     Fullscreen.prototype.destroy = function() {
 
         // exit from fullscreen if activated
-        this.exitFullscreen();
+        if(isFullScreen()) {
+            this.exitFullscreen();
+        }
 
         $(document).off('fullscreenchange.lg webkitfullscreenchange.lg mozfullscreenchange.lg MSFullscreenChange.lg');
     };
@@ -2272,9 +2282,9 @@
 
 }));
 
-/*! lg-video - v1.2.0 - 2017-11-16
+/*! lg-video - v1.2.2 - 2018-05-01
 * http://sachinchoolur.github.io/lightGallery
-* Copyright (c) 2017 Sachin N; Licensed GPLv3 */
+* Copyright (c) 2018 Sachin N; Licensed GPLv3 */
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -2282,13 +2292,13 @@
     define(['jquery'], function (a0) {
       return (factory(a0));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
     module.exports = factory(require('jquery'));
   } else {
-    factory(jQuery);
+    factory(root["jQuery"]);
   }
 }(this, function ($) {
 
@@ -2350,6 +2360,17 @@
             _this.core.$el.on('onAfterSlide.lg.tm', function(event, prevIndex) {
                 _this.core.$slide.eq(prevIndex).removeClass('lg-video-playing');
             });
+            
+            if (_this.core.s.autoplayFirstVideo) {
+                _this.core.$el.on('onAferAppendSlide.lg.tm', function (e, index) {
+                    if (!_this.core.lGalleryOn) {
+                        var $el = _this.core.$slide.eq(index);
+                        setTimeout(function () {
+                            _this.loadVideoOnclick($el);
+                        }, 100);
+                    }
+                });
+            }
         };
     
         Video.prototype.loadVideo = function(src, addClass, noPoster, index, html) {
@@ -2409,7 +2430,7 @@
                     a = a + '&' + $.param(this.core.s.vkPlayerParams);
                 }
     
-                video = '<iframe class="lg-video-object lg-vk ' + addClass + '" width="560" height="315" src="http://vk.com/video_ext.php?' + isVideo.vk[1] + a + '" frameborder="0" allowfullscreen></iframe>';
+                video = '<iframe class="lg-video-object lg-vk ' + addClass + '" width="560" height="315" src="//vk.com/video_ext.php?' + isVideo.vk[1] + a + '" frameborder="0" allowfullscreen></iframe>';
     
             }
     
