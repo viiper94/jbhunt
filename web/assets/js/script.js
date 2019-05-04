@@ -90,6 +90,7 @@ $(document).ready(function(){
     $(document).on('click', '.save-img-profile i', function(){
         var files = $('.profile-img [type=file]')[0].files;
         var data = new FormData();
+        data.append('_csrf', $('meta[name=csrf-token]').attr('content'));
         $.each(files, function(key, value){
             data.append(key, value);
         });
@@ -119,6 +120,7 @@ $(document).ready(function(){
     $(document).on('click', '.save-img-bg i', function(){
         var files = $('.bg-img [type=file]')[0].files;
         var data = new FormData();
+        data.append('_csrf', $('meta[name=csrf-token]').attr('content'));
         $.each(files, function(key, value){
             data.append(key, value);
         });
@@ -157,7 +159,10 @@ $(document).ready(function(){
             $.ajax({
                 url : window.location.protocol + '//' + window.location.host + '/notifications?ajax-action=mark_notifications',
                 type: 'POST',
-                data: {id : id},
+                data: {
+                    _csrf: $('meta[name=csrf-token]').attr('content'),
+                    id : id
+                },
                 cache: false,
                 dataType: 'json',
                 success : function(response){
@@ -185,7 +190,10 @@ $(document).ready(function(){
         $.ajax({
             url : window.location.protocol + '//' + window.location.host + '/notifications?ajax-action=delete_notification',
             type: 'POST',
-            data: {id : id},
+            data: {
+                _csrf: $('meta[name=csrf-token]').attr('content'),
+                id : id
+            },
             cache: false,
             dataType: 'json',
             success : function(response){
@@ -208,7 +216,10 @@ $(document).ready(function(){
             $.ajax({
                 url : window.location.protocol + '//' + window.location.host + '/signup?ajax-action=get_truckersmpid',
                 type: 'POST',
-                data: {steam_url : $(this).val()},
+                data: {
+                    _csrf: $('meta[name=csrf-token]').attr('content'),
+                    steam_url : $(this).val()
+                },
                 cache: false,
                 dataType: 'json',
                 success : function(response){
@@ -235,7 +246,10 @@ $(document).ready(function(){
             $.ajax({
                 url : window.location.protocol + '//' + window.location.host + '/login?ajax-action=reset_password',
                 type: 'POST',
-                data: {'email' : email},
+                data: {
+                    _csrf: $('meta[name=csrf-token]').attr('content'),
+                    'email' : email
+                },
                 cache: false,
                 dataType: 'json',
                 beforeSend: function(){
@@ -278,6 +292,7 @@ $(document).ready(function(){
 		var achid = $(this).attr('data-achid');
         if(files.length === 1){
             var data = new FormData();
+            data.append('_csrf',$('meta[name=csrf-token]').attr('content'));
             $.each(files, function(key, value){
                 data.append(key, value);
             });
@@ -318,6 +333,7 @@ $(document).ready(function(){
             url : '/convoys/participants',
             type: 'POST',
             data: {
+                _csrf: $('meta[name=csrf-token]').attr('content'),
                 participate : participate,
                 user_id : userId,
                 convoy_id : convoyId
@@ -348,6 +364,7 @@ $(document).ready(function(){
             url : '/members/step4',
             type: 'POST',
             data: {
+                _csrf: $('meta[name=csrf-token]').attr('content'),
                 uid : uid,
                 complete : complete
             },
@@ -380,6 +397,7 @@ $(document).ready(function(){
 		var files = button.parents('.modal').find('[type=file]')[0].files;
 		if(files.length === 1){
 			var data = new FormData();
+			data.append('_csrf', $('meta[name=csrf-token]').attr('content'));
 			$.each(files, function(key, value){
 				data.append(key, value);
 			});
