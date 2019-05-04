@@ -24,7 +24,7 @@ $this->title = 'Вступить в J.B. Hunt'; ?>
                     <li>Ваш профиль Steam открыт для всех <a href="http://steamcommunity.com/profiles/76561198283160497/edit/settings" target="_blank">Открыть</a></li>
                     <li>Ваши личные сообщения ВК открыты для всех <a href="https://vk.com/settings?act=privacy" target="_blank">Открыть</a></li>
                     <li>Ваши профиль на сайте полностью заполнен <a href="<?=Url::to(['site/profile', 'action' => 'edit'])?>" target="_blank">Заполнить</a></li>
-<!--                    <li>Вам есть 18 лет. Если Вам нет 18, <a href="https://vk.com/im?sel=105513579" target="_blank">писать сюда</a></li>-->
+<!--                    <li>Вам есть 18 лет.</li>-->
 <!--                    <li>Вы ознакомились с <a href="--><?//= Url::to(['site/rules']) ?><!--" target="_blank">правилами</a></li>-->
                     <li>Вы не состоите в другой ВТК</li>
                 </ol>
