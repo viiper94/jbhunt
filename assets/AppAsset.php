@@ -38,6 +38,6 @@ class AppAsset extends AssetBundle
 
     public function init(){
         parent::init();
-        if(User::isAdmin()) $this->js[] = 'assets/js/admin.js';
+        if(User::isAdmin()) $this->js[] = 'assets/js/admin.js?0405';
     }
 }
