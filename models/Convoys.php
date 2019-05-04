@@ -164,7 +164,7 @@ class Convoys extends ActiveRecord{
 			'Beyond the Baltic Sea' => 'Beyond the Baltic Sea',
 			'High Power Cargo Pack' => 'High Power Cargo Pack',
 			'Schwarzmüller Trailer Pack' => 'Schwarzmüller Trailer Pack',
-			'Krone Trailer Pack' => 'Schwarzmüller Trailer Pack',
+			'Krone Trailer Pack' => 'Krone Trailer Pack',
 			'Special Transport' => 'Special Transport (ETS2)',
 			'Heavy Cargo Pack (ETS2)' => 'Heavy Cargo Pack (ETS2)',
 		];
