@@ -66,15 +66,15 @@ $(document).ready(function(){
         }
     });
 
-    $('.profile-img [type=file]').change(function(){
-        if(this.files.length > 0){
-            $('.profile-img').append('<div class="white-text save-img-profile text-shadow">' +
-                '<i class="material-icons notranslate medium-small">refresh</i>' +
-                '</div>');
-        }else{
-            $('.profile-img').find('.save-img-profile').remove();
-        }
-    });
+    // $('.profile-img [type=file]').change(function(){
+    //     if(this.files.length > 0){
+    //         $('.profile-img').append('<div class="white-text save-img-profile text-shadow">' +
+    //             '<i class="material-icons notranslate medium-small">refresh</i>' +
+    //             '</div>');
+    //     }else{
+    //         $('.profile-img').find('.save-img-profile').remove();
+    //     }
+    // });
 
     $('.bg-img [type=file]').change(function(){
         if(this.files.length > 0){
@@ -86,35 +86,20 @@ $(document).ready(function(){
             $('.bg-img').find('.save-img-bg').remove();
         }
     });
-    
-    $(document).on('click', '.save-img-profile i', function(){
-        var files = $('.profile-img [type=file]')[0].files;
-        var data = new FormData();
-        data.append('_csrf', $('meta[name=csrf-token]').attr('content'));
-        $.each(files, function(key, value){
-            data.append(key, value);
-        });
-        $.ajax({
-            url : window.location.href + '?ajax-action=upload-profile-img',
-            type: 'POST',
-            data: data,
-            cache: false,
-            dataType: 'json',
-            processData: false, // Не обрабатываем файлы (Don't process the files)
-            contentType: false, // Так jQuery скажет серверу что это строковой запрос
-            beforeSend: function(){
-                $('.save-img-profile i').replaceWith(getPreloaderHtml('preloader-profile'));
-            },
-            success: function(response){
-                if(response.status === 'OK'){
-                    $('.profile-img').attr('style', 'background-image: url('+response.path+'?t='+response.t+')');
-                }
-            },
-            complete : function(){
-                $('.profile-img').parent().find('.preloader-profile').remove();
-                $('.profile-img [type=file]').val('');
+
+    $('.profile-img [type=file]').fileupload({
+        url : window.location.href + '?ajax-action=upload-profile-img',
+        dataType: 'json',
+        start: function(e){
+            $('.save-img-profile i').replaceWith(getPreloaderHtml('preloader-profile'));
+        },
+        done: function(e, response){
+            if(response.result.status === 'OK'){
+                $('.profile-img').attr('style', 'background-image: url('+response.result.path+'?t='+response.result.t+')');
             }
-        });
+            $('.profile-img').parent().find('.preloader-profile').remove();
+            $('.profile-img [type=file]').val('');
+        }
     });
 
     $(document).on('click', '.save-img-bg i', function(){

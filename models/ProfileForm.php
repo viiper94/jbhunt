@@ -142,10 +142,11 @@ class ProfileForm extends Model{
         Yii::$app->user->identity->nickname = $data['nickname'];
     }
 
-    public static function updateImage($id, $file) {
+    public static function updateImage($id, $file){
         $user = User::findOne($id);
-        if($user->picture != 'default.jpg') unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture);
-        switch ($file['type']){
+        if($user->picture != 'default.jpg' && file_exists($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture))
+            unlink($_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture);
+        switch ($file['type']['picture']){
             case 'image/png': $ext = '.png'; break;
             case 'image/gif': $ext = '.gif'; break;
             default: $ext = '.jpg';
@@ -154,7 +155,7 @@ class ProfileForm extends Model{
         $user->update();
         $dir = $_SERVER['DOCUMENT_ROOT'].Yii::$app->request->baseUrl.'/images/users/' . $user->picture;
         $path = false;
-        if(move_uploaded_file($file['tmp_name'], $dir)){
+        if(move_uploaded_file($file['tmp_name']['picture'], $dir)){
             $path = str_replace($_SERVER['DOCUMENT_ROOT'], '', $dir);
         }
         return $path;

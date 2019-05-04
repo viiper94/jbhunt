@@ -25,7 +25,6 @@ class AppAsset extends AssetBundle
         'assets/css/style.css',
     ];
     public $js = [
-        'assets/js/jquery-3.2.1.min.js',
         'assets/materialize/js/materialize.js',
         'assets/js/script.js',
     ];

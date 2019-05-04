@@ -214,7 +214,7 @@ class SiteController extends Controller{
         if(Yii::$app->request->isAjax){
             $action = Yii::$app->request->get('ajax-action');
             if($action == 'upload-profile-img'){
-                if($path = ProfileForm::updateImage(Yii::$app->user->id, $_FILES[0])) {
+                if($path = ProfileForm::updateImage(Yii::$app->user->id, $_FILES["ProfileForm"])) {
                     Yii::$app->response->format = Response::FORMAT_JSON;
                     return [
                         'status' => 'OK',
