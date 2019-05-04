@@ -161,14 +161,19 @@ class Convoys extends ActiveRecord{
 			'Scandinavia' => 'Scandinavia',
 			'Vive la France!' => 'Vive la France!',
 			'Italia' => 'Italia',
+			'Beyond the Baltic Sea' => 'Beyond the Baltic Sea',
 			'High Power Cargo Pack' => 'High Power Cargo Pack',
 			'Schwarzmüller Trailer Pack' => 'Schwarzmüller Trailer Pack',
-			'Special Transport' => 'Special Transport',
+			'Krone Trailer Pack' => 'Schwarzmüller Trailer Pack',
+			'Special Transport' => 'Special Transport (ETS2)',
 			'Heavy Cargo Pack (ETS2)' => 'Heavy Cargo Pack (ETS2)',
 		];
 		$ats = [
 			'Heavy Cargo Pack (ATS)' => 'Heavy Cargo Pack (ATS)',
+            'Special Transport' => 'Special Transport (ATS)',
 			'New Mexico' => 'New Mexico',
+			'Oregon' => 'Oregon',
+//			'Washington' => 'Washington',
 		];
 		return $game ? $game : ArrayHelper::merge($ets, $ats);
     }
