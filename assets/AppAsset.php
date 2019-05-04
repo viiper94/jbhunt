@@ -25,6 +25,9 @@ class AppAsset extends AssetBundle
         'assets/css/style.css',
     ];
     public $js = [
+        '/assets/js/jquery.ui.widget.js',
+        '/assets/js/jquery.iframe-transport.js',
+        '/assets/js/jquery.fileupload.js',
         'assets/materialize/js/materialize.js',
         'assets/js/script.js',
     ];

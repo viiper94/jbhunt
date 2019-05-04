@@ -5,12 +5,7 @@ use yii\helpers\Url;
 use yii\web\View;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Редактирование профиля - Volvo Trucks';
-
-$this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/jquery.ui.widget.js',  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/jquery.iframe-transport.js',  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/jquery.fileupload.js',  ['position' => yii\web\View::POS_HEAD, 'depends' => [\yii\web\JqueryAsset::className()]]);
-?>
+$this->title = 'Редактирование профиля - J.B. Hunt'; ?>
 
 <div class="container">
     <?php $form = ActiveForm::begin([
