@@ -6,25 +6,25 @@ $this->title = 'J.B. Hunt'; ?>
 
 <div id="index-banner" class="parallax-container valign-wrapper">
     <div class="section" style="flex: 1;">
-        <div class="container white-text">
-            <h1 class="center text-shadow">ВТК J.B. Hunt</h1>
-            <div class="row center">
-                <h6 class="col offset-l3 l6 s12 text-shadow">Виртуальная транспортная компания J.B. Hunt -
-                    это сообщество профессиональных водителей Euro Truck Simulator 2 и American Truck Simulator.</h6>
-            </div>
-            <?php if(Yii::$app->user->isGuest) : ?>
-                <div class="row center">
-                    <a href="<?=Url::to(['site/login'])?>" class="btn-large waves-effect waves-light indigo darken-3">Войти</a>
-                </div>
-            <?php endif; ?>
-            <?php if(!\app\models\User::isVtcMember() && !Yii::$app->user->isGuest) : ?>
-                <div class="row center">
-                    <a href="<?=Url::to(['site/recruit'])?>" class="btn-large waves-effect waves-light indigo darken-3">Вступить</a>
-                </div>
-            <?php endif ?>
-        </div>
+<!--        <div class="container white-text">-->
+<!--            <h1 class="center text-shadow">ВТК J.B. Hunt</h1>-->
+<!--            <div class="row center">-->
+<!--                <h6 class="col offset-l3 l6 s12 text-shadow">Виртуальная транспортная компания J.B. Hunt --->
+<!--                    это сообщество профессиональных водителей Euro Truck Simulator 2 и American Truck Simulator.</h6>-->
+<!--            </div>-->
+<!--            --><?php //if(Yii::$app->user->isGuest) : ?>
+<!--                <div class="row center">-->
+<!--                    <a href="--><?//=Url::to(['site/login'])?><!--" class="btn-large waves-effect waves-light indigo darken-3">Войти</a>-->
+<!--                </div>-->
+<!--            --><?php //endif; ?>
+<!--            --><?php //if(!\app\models\User::isVtcMember() && !Yii::$app->user->isGuest) : ?>
+<!--                <div class="row center">-->
+<!--                    <a href="--><?//=Url::to(['site/recruit'])?><!--" class="btn-large waves-effect waves-light indigo darken-3">Вступить</a>-->
+<!--                </div>-->
+<!--            --><?php //endif ?>
+<!--        </div>-->
     </div>
-    <div class="parallax"><img src="assets/img/home/1-1.jpg"></div>
+    <div class="paralax"><img src="assets/img/home/1-1.jpg"></div>
 </div>
 <section class="z-depth-4" style="padding-bottom: 50px;">
     <div class="container">
