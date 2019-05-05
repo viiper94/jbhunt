@@ -31,8 +31,8 @@
                 <div class="col m4 s12">
                     <p><i class="material-icons notranslate left">mic</i>СВЯЗЬ</p>
                     <ul>
-                        <li><a href="https://www.teamspeak.com/en/downloads" target="_blank">Скачать TeamSpeak3</a></li>
-                        <li class="fs17">Наш адрес: <b><a href="ts3server://volvotrucks.ts-3.top">volvotrucks.ts-3.top</a></b></li>
+                        <li><a href="https://discordapp.com/download" target="_blank">Скачать Discord</a></li>
+                        <li class="fs17">Наш адрес: <b><a href="https://discord.gg/qZMdG9R" target="_blank">https://discord.gg/qZMdG9R</a></b></li>
                     </ul>
                     <p><i class="material-icons notranslate left">lightbulb_outline</i>ФИРМЕННЫЙ СТИЛЬ</p>
                     <ul>
@@ -64,6 +64,6 @@
         </div>
     </div>
     <div class="footer-copyright grey lighten-2 black-text">
-        <div class="container"><span>&copy; <a href="https://steamcommunity.com/id/viiper94/" target="_blank">Mayday</a> - <?=date('Y')?></span></div>
+        <div class="container"><span>&copy; <a class="black-text" href="https://steamcommunity.com/id/viiper94/" target="_blank">Mayday</a> - <?=date('Y')?></span></div>
     </div>
 </footer>
