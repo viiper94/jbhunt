@@ -11,18 +11,22 @@ $this->title = 'Вариации тягачей - J.B. Hunt';
     <div class="row" style="margin-top: 20px;">
         <?php $game = Yii::$app->request->get('game'); ?>
         <div class="col m6 s12">
-            <a href="<?= Url::to(['site/variations', 'game' => 'ets2']) ?>" class="btn-flat waves-effect right<?php if($game != 'ats'): ?> disabled<?php endif ?>">
+            <a href="<?= Url::to(['site/variations', 'game' => 'ets2']) ?>" class="btn-flat waves-effect right">
                 Отделение ETS2
             </a>
         </div>
         <div class="col m6 s12">
-            <a href="<?= Url::to(['site/variations', 'game' => 'ats']) ?>" class="btn-flat waves-effect left<?php if($game == 'ats'): ?> disabled<?php endif ?>">
+            <a style="font-weight: bold" class="btn-flat waves-effect left indigo-text">
                 Отделение ATS
             </a>
         </div>
     </div>
-    <div class="card-panel grey lighten-4">
-        <h5 class="light"><i class="material-icons notranslate small left">info</i>По просторам Америки мы ездим на всех тягачах в нашем фирменном цвете.</h5>
+    <div id="1">
+        <h5>Вариация №1</h5>
+        <img class="responsive-img z-depth-2 materialboxed" src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/var_us.jpg">
     </div>
-    <img src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/var_us.jpg" class="materialboxed responsive-img z-depth-3" style="margin-bottom: 20px;">
+    <div id="trailer" style="margin-bottom: 15px;">
+        <h5>Прицеп J.B. Hunt</h5>
+        <img class="responsive-img z-depth-2 materialboxed" src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/trailer_us.jpg">
+    </div>
 </div>
