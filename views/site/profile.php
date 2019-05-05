@@ -30,7 +30,7 @@ $this->title = 'Профиль - J.B. Hunt';
             <div class="row">
                 <div class="col s12 m6 l3 offset-l2 offset-m2 center-s">
                     <h4 class="card-title"><?=$user->first_name?> <?=$user->last_name?></h4>
-                    <p class="grey-text"><?php if($user->isVtcMember()): ?>[J.B. Hunt]<?php endif ?><?=htmlentities($user->nickname) ?></p>
+                    <p class="grey-text"><?php if($user->isVtcMember()): ?>[J.B. Hunt] <?php endif ?><?=htmlentities($user->nickname) ?></p>
                 </div>
                 <div class="col s12 m4 l2 center">
                     <h4 class="card-title"><?= $user->age ?></h4>
