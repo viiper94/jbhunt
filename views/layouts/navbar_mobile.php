@@ -31,7 +31,7 @@
                     <div class="collapsible-body">
                         <ul>
                             <li><a href="<?=Url::to(['site/rules'])?>">ПРАВИЛА КОМПАНИИ</a></li>
-                            <li><a href="<?=Url::to(['site/variations', 'game' => 'ets2'])?>">ВАРИАЦИИ ГРУЗОВИКОВ</a></li>
+                            <li><a href="<?=Url::to(['variations/index', 'game' => 'ets2'])?>">ВАРИАЦИИ ГРУЗОВИКОВ</a></li>
                             <?php if(\app\models\User::isVtcMember()) : ?>
                                 <li><a href="<?=Url::to(['site/exams'])?>">ЭКЗАМЕНЫ ДЛЯ ВОДИТЕЛЕЙ</a></li>
                             <?php endif ?>

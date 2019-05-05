@@ -36,8 +36,8 @@
                     </ul>
                     <p><i class="material-icons notranslate left">lightbulb_outline</i>ФИРМЕННЫЙ СТИЛЬ</p>
                     <ul>
-                        <li><a href="<?= Url::to(['site/variations', 'game' => 'ets2']) ?>">Отделение ETS2</a></li>
-                        <li><a href="<?= Url::to(['site/variations', 'game' => 'ats']) ?>">Отделение ATS</a></li>
+                        <li><a href="<?= Url::to(['variations/index', 'game' => 'ets2']) ?>">Отделение ETS2</a></li>
+                        <li><a href="<?= Url::to(['variations/index', 'game' => 'ats']) ?>">Отделение ATS</a></li>
                     </ul>
                 </div>
             </div>

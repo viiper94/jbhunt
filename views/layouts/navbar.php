@@ -15,7 +15,7 @@
                     <a href="<?=Url::to(['site/rules'])?>">ПРАВИЛА</a>
                     <ul id="rules-dropdown" class="z-depth-2">
                         <li>
-                            <a href="<?=Url::to(['site/variations', 'game' => 'ets2'])?>">
+                            <a href="<?=Url::to(['variations/index', 'game' => 'ets2'])?>">
                                 <i class="material-icons notranslate left">lightbulb_outline</i>ВАРИАЦИИ ТЯГАЧЕЙ
                             </a>
                         </li>

@@ -133,7 +133,8 @@ $config = [
                 'trailers/<action:\w+>/' => 'trailers/<action>',
 
                 // variations
-                'variations/<game:\w+>/' => 'site/variations',
+                'variations/<game:\w+>/' => 'variations/index',
+                'variations/<action:\w+>/' => 'variations/<action>',
 
                 // general
                 '<action:\w+>/<id:\d+>/' => 'site/<action>',
