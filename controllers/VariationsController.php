@@ -11,4 +11,8 @@ class VariationsController extends Controller{
         return $this->render(Yii::$app->request->get('game') == 'ats' ? 'variations_ats' : 'variations_ets');
     }
 
+    public function actionEdit(){
+        return $this->render('edit');
+    }
+
 }
