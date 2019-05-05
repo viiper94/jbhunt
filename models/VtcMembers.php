@@ -78,7 +78,7 @@ class VtcMembers extends ActiveRecord{
         $all_members = self::getAllMembers(false);
         $members = array();
         foreach ($all_members as $member){
-            $members[$member->id] = '[Volvo Trucks] '.$member->nickname;
+            $members[$member->id] = '[J.B. Hunt] '.$member->nickname;
         }
         return $members;
     }
@@ -156,10 +156,10 @@ class VtcMembers extends ActiveRecord{
     public function getMemberNickname(){
         $truckersmp = TruckersMP::getMemberTruckersMpNickname($this->steamid);
         $steam = Steam::getPlayerNickname($this->steamid);
-        if(strpos($truckersmp, '[Volvo Trucks]') !== false){
-            return str_replace(['[Volvo Trucks]', '[Volvo Trucks] '], '', $truckersmp);
-        }else if(strpos($steam, '[Volvo Trucks]') !== false){
-            return str_replace(['[Volvo Trucks]', '[Volvo Trucks] '], '', $steam);
+        if(strpos($truckersmp, '[J.B. Hunt]') !== false){
+            return str_replace(['[J.B. Hunt]', '[J.B. Hunt] '], '', $truckersmp);
+        }else if(strpos($steam, '[J.B. Hunt]') !== false){
+            return str_replace(['[J.B. Hunt]', '[J.B. Hunt] '], '', $steam);
         }else{
             return $this->nickname;
         }

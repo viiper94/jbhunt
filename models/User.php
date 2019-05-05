@@ -79,7 +79,7 @@ class User extends ActiveRecord implements IdentityInterface{
 			$user->username = !User::findByUsername(explode('/', $json->profileurl)[4]) ?
 				explode('/', $json->profileurl)[4] :
 				$json->steamid;
-			$user->email = $user->username.'@volvovtc.com';
+			$user->email = $user->username.'@vtchunt.ru';
 			if(property_exists($json, 'realname')){
 				$user->first_name = explode(' ', $json->realname)[0];
 				$user->last_name = explode(' ', $json->realname)[1];
