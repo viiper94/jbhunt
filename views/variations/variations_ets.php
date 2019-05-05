@@ -1,6 +1,5 @@
 <?php
 
-use app\models\User;
 use yii\helpers\Url;
 
 $this->title = 'Вариации тягачей - J.B. Hunt';
@@ -18,7 +17,7 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/fotorama.js',
             </a>
         </div>
         <div class="col m6 s12">
-            <a href="<?= Url::to(['variations/index', 'game' => 'ats']) ?>" class="btn-flat waves-effect left">
+            <a href="<?= Url::to(['site/variations', 'game' => 'ats']) ?>" class="btn-flat waves-effect left">
                 Отделение ATS
             </a>
         </div>
@@ -36,10 +35,3 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/assets/js/fotorama.js',
         <img class="responsive-img z-depth-2 materialboxed" src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/trailer.jpg">
     </div>
 </div>
-<?php if(User::isAdmin()): ?>
-    <div class="fixed-action-btn">
-        <a href="<?=Url::to(['variations/edit'])?>" class="btn-floating btn-large red tooltipped waves-effect waves-light" data-position="left" data-tooltip="Редактировать">
-            <i class="large material-icons notranslate">mode_edit</i>
-        </a>
-    </div>
-<?php endif; ?>

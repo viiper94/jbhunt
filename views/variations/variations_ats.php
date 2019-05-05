@@ -1,7 +1,7 @@
 <?php
 
-use app\models\User;
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 $this->title = 'Вариации тягачей - J.B. Hunt';
 
@@ -11,7 +11,7 @@ $this->title = 'Вариации тягачей - J.B. Hunt';
     <div class="row" style="margin-top: 20px;">
         <?php $game = Yii::$app->request->get('game'); ?>
         <div class="col m6 s12">
-            <a href="<?= Url::to(['variations/index', 'game' => 'ets2']) ?>" class="btn-flat waves-effect right">
+            <a href="<?= Url::to(['site/variations', 'game' => 'ets2']) ?>" class="btn-flat waves-effect right">
                 Отделение ETS2
             </a>
         </div>
@@ -30,10 +30,3 @@ $this->title = 'Вариации тягачей - J.B. Hunt';
         <img class="responsive-img z-depth-2 materialboxed" src="<?= Yii::$app->request->baseUrl ?>/assets/img/variations/trailer_us.jpg">
     </div>
 </div>
-<?php if(User::isAdmin()): ?>
-    <div class="fixed-action-btn">
-        <a href="<?=Url::to(['variations/edit'])?>" class="btn-floating btn-large red tooltipped waves-effect waves-light" data-position="left" data-tooltip="Редактировать">
-            <i class="large material-icons notranslate">mode_edit</i>
-        </a>
-    </div>
-<?php endif; ?>
