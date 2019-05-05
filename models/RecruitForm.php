@@ -198,7 +198,6 @@ class RecruitForm extends Model{
                 $member->invited_by = $claim->invited_by;
                 $member->sort = ($last_member ? intval($last_member->sort) : 0)+1;
                 $user = User::findOne($claim->user_id);
-                $user->company = 'Volvo Trucks';
                 $user->save();
                 Notifications::addNotification('Вы были приняты в ряды водителей ВТК', $this->user_id);
                 return $member->save();
@@ -222,7 +221,6 @@ class RecruitForm extends Model{
             $member->start_date = date('Y-m-d');
             $member->sort = ($last_member ? intval($last_member->sort) : 0)+1;
             $user = User::findOne($claim->user_id);
-            $user->company = 'J.B. Hunt';
             $user->save();
             Notifications::addNotification('Вы были приняты в ряды водителей ВТК', $claim->user_id);
             return $member->save();
