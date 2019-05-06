@@ -23,7 +23,7 @@ class VariationsController extends Controller{
                 if(!$variation->editVariation()){
                     $errors[] = 'Ошибка при редактировании';
                 }
-                return $this->redirect(['variations/index']);
+                return $this->redirect(['variations/index', 'game' => $variation->game]);
             }else{
                 return $this->render('edit', [
                     'variation' => $variation,
@@ -42,7 +42,7 @@ class VariationsController extends Controller{
                 if(!$variation->editVariation()){
                     $errors[] = 'Ошибка';
                 }
-                return $this->redirect(['variations/index']);
+                return $this->redirect(['variations/index', 'game' => $variation->game]);
             }else{
                 return $this->render('edit', [
                     'variation' => $variation,
