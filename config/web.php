@@ -137,6 +137,7 @@ $config = [
                 'variations/edit/<id:\d+>/' => 'variations/edit',
                 'variations/<game:\w+>/' => 'variations/index',
                 'variations/<action:\w+>/' => 'variations/<action>',
+                'variations' => 'variations/index',
 
                 // general
                 '<action:\w+>/<id:\d+>/' => 'site/<action>',

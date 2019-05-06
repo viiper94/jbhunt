@@ -12,7 +12,7 @@ class VariationsController extends Controller{
 
     public function actionIndex(){
         return $this->render('index', [
-            'variations' => Variations::findAll(['game' => Yii::$app->request->get('game')])
+            'variations' => Variations::findAll(['game' => Yii::$app->request->get('game', 'ets2')])
         ]);
     }
 
