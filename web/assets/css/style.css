@@ -381,9 +381,9 @@ th.first .preloader-wrapper{vertical-align: middle;}
 .save-img-profile i, .preloader-profile{vertical-align: middle;}
 .save-img-bg{position: absolute; right: 0; cursor: pointer; z-index: 2;}
 .preloader-profile{ width: 40px; height: 40px;}
-.bg-img{position: absolute; right: 0;}
-.bg-img label{ color: #fff; opacity: 0.75; transition: .3s ease opacity; cursor: pointer;}
-.bg-img label:hover{ opacity: 1;}
+.bg-img, .var-img{position: absolute; right: 0; top: 0;}
+.bg-img label, .var-img label{ color: #fff; opacity: 0.75; transition: .3s ease opacity; cursor: pointer;}
+.bg-img label:hover, .var-img label:hover{ opacity: 1;}
 
 /* users */
 .search{ padding: 0;}

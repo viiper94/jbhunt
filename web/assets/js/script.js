@@ -66,16 +66,6 @@ $(document).ready(function(){
         }
     });
 
-    // $('.profile-img [type=file]').change(function(){
-    //     if(this.files.length > 0){
-    //         $('.profile-img').append('<div class="white-text save-img-profile text-shadow">' +
-    //             '<i class="material-icons notranslate medium-small">refresh</i>' +
-    //             '</div>');
-    //     }else{
-    //         $('.profile-img').find('.save-img-profile').remove();
-    //     }
-    // });
-
     $('.bg-img [type=file]').change(function(){
         if(this.files.length > 0){
             $('.bg-img').after('<div class="white-text save-img-bg text-shadow">' +

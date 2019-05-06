@@ -41,6 +41,9 @@ tests/_support/_generated
 /web/images/trailers/*
 !/web/images/trailers/default.png
 
+/web/images/variations/*
+!/web/images/variations/default.jpg
+
 /web/images/mods/*
 !/web/images/mods/default.jpg
 !/web/images/mods/categories

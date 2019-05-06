@@ -42,7 +42,11 @@ $(document).ready(function(){
 
     $('#recruitform-status').change(function(){
     	$(this).val() == 2 ? $('#claim-reasons').show() : $('#claim-reasons').hide();
-	})
+	});
+
+    $('.var-img [type=file]').change(function(){
+        readURL(this, '#preview');
+    });
 
 }); // end of document ready
 
