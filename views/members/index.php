@@ -24,6 +24,7 @@ $this->title = 'Сотрудники J.B. Hunt'; ?>
                         <?= $member->first_name . ' ' . $member->last_name ?>
                     </div>
                     <p class="grey-text">[J.B. Hunt] <?= $member->nickname ?></p>
+                    <p class="bold"><?= $member->post_name ?></p>
                     <p>Дата рождения:
                         <span class="nowrap"><b><?= Yii::$app->formatter->asDate($member->birth_date, 'long') ?></b></span>
                         <span class="nowrap">(<?= \app\models\User::getUserAge($member->birth_date) ?>)</span>

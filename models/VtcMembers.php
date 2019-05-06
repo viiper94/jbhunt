@@ -67,8 +67,9 @@ class VtcMembers extends ActiveRecord{
 
     public static function getAllMembers($order_by_sort = true){
         $members =  VtcMembers::find()
-			->select(['vtc_members.*', 'users.*', 'vtc_members.id as id'])
-			->innerJoin('users', 'vtc_members.user_id = users.id');
+			->select(['vtc_members.*', 'users.*', 'vtc_members.id as id', 'vtc_positions.name as post_name'])
+			->innerJoin('users', 'vtc_members.user_id = users.id')
+            ->leftJoin('vtc_positions', 'vtc_positions.id = vtc_members.post_id');
         if($order_by_sort) $members = $members->orderBy(['sort' => SORT_ASC, 'start_date' => SORT_DESC]);
         $members = $members->all();
         return $members;
