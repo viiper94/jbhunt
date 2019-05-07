@@ -105,6 +105,12 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/lib/ck-editor/ckeditor.js?t=
                                 'tag' => false
                             ]
                         ])->checkbox(['label' => null])->error(false)->label('Italia') ?>
+                        <?= $form->field($model, 'dlc[Beyond The Baltic Sea]', [
+                            'template' => '{input}{label}',
+                            'options' => [
+                                'tag' => false
+                            ]
+                        ])->checkbox(['label' => null])->error(false)->label('Beyond The Baltic Sea') ?>
                     <?php else : ?>
                         <?= $form->field($model, 'dlc[New Mexico]', [
                             'template' => '{input}{label}',
@@ -112,6 +118,12 @@ $this->registerJsFile(Yii::$app->request->baseUrl.'/lib/ck-editor/ckeditor.js?t=
                                 'tag' => false
                             ]
                         ])->checkbox(['label' => null])->error(false)->label('New Mexico') ?>
+                        <?= $form->field($model, 'dlc[Oregon]', [
+                            'template' => '{input}{label}',
+                            'options' => [
+                                'tag' => false
+                            ]
+                        ])->checkbox(['label' => null])->error(false)->label('Oregon') ?>
                     <?php endif ?>
                 </div>
             </div>
